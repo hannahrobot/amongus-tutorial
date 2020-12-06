@@ -15,6 +15,8 @@ But this hasn't happened yet!
 // Bring in all the scenes
 import "phaser";
 import config from "./config/config";
+import WaitingRoom from "./scenes/WaitingRoom";
+import MainScene from "./scenes/MainScene";
 
 class Game extends Phaser.Game {
   constructor() {
@@ -22,9 +24,11 @@ class Game extends Phaser.Game {
     super(config);
     // Add all the scenes
     // << ADD ALL SCENES HERE >>
-
+    this.scene.add("MainScene", MainScene);
+    this.scene.add("WaitingRoom", WaitingRoom);
     // Start the game with the mainscene
     // << START GAME WITH MAIN SCENE HERE >>
+    this.scene.start("MainScene");
   }
 }
 // Create new instance of game

@@ -1,0 +1,124 @@
+
+<style>
+  :root {
+  --dg: #101212;
+  --lg: #C0B0B5;
+  --g: #0F6;
+  --c: #0FF;
+  --m: #F03;
+  --p: #0FF;
+}
+
+@keyframes colorshift {
+  0% {
+    --p: var(--g);
+  }
+  50% {
+    --p: var(--c);
+  }
+  100% {
+    --p: var(--m);
+  }
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: var(--dg);
+  font-family: 'Aldrich', sans-serif;
+  transition: color 1s;
+  animation: colorshift 5s infinite;
+  animation-direction: alternate;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.float {
+  margin: auto;
+}
+
+.fixed {
+  width: 100px;
+  height: 50px;
+  background-color: transparent;
+}
+
+.stack-g {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px var(--p), 4px 4px 0 var(--dg), 6px 6px 1px var(--p);
+}
+
+input,
+button {
+  display: block;
+  border-radius: 5px;
+  border-style: none;
+  padding: 5px;
+  margin: 5px;
+  background-color: var(--dg) !important;
+  box-shadow: 1px 1px 1px var(--p) inset;
+  font-size: 1.5em;
+  font-family: 'Aldrich', sans-serif;
+  font-weight: bold;
+  color: var(--lg);
+  outline: none;
+/*   text-shadow: 2px 2px 1px var(--p); */
+}
+
+input:hover,
+button:hover {
+  box-shadow: 2px 2px 2px var(--p) inset;
+}
+
+button {
+  display: inline-block;
+}
+
+.error-text {
+  text-shadow: 1px 1px 2px #F00;
+}
+
+.inline {
+  display: inline-block;
+  vertical-align: middle;
+  align-contet: center;
+}
+
+.divider {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--dg);
+  height: 100px;
+  box-shadow: 2px 2px 1px var(--p);
+}
+</style>
+
+<div class="container">
+  <div class="float">
+    <div class="stack-g">
+      <div class="inline" id="login">
+        <input type="text" placeholder="Username" id="username" name="username">
+        <input type="password" placeholder="Password" id="password" name="password">
+        <button type="button" id="login" name='loginButton'>Login</button>
+      </div>
+      <div class="divider inline"></div>
+      <div class="inline" id="register">
+        <input type="text" placeholder="Username" id="username" name="username2">
+        <input type="password" placeholder="Password" id="password" name="password2">
+        <!-- <input type="password" id="password2" placeholder="Confirm Password"> -->
+        <button type="button" id="register"name='signupButton'>Register</button>
+      </div>
+    </div>
+  </div>
+</div>
