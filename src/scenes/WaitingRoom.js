@@ -80,6 +80,7 @@ export default class WaitingRoom extends Phaser.Scene {
       scene.roomKey = roomKey;
       scene.roomKeyText.setText(scene.roomKey);
     });
+
     scene.socket.on("keyNotValid", function () {
       scene.notValidText.setText("Invalid Room Key");
     });
