@@ -17,6 +17,7 @@ import "phaser";
 import config from "./config/config";
 import WaitingRoom from "./scenes/WaitingRoom";
 import MainScene from "./scenes/MainScene";
+import TaskScene from "./scenes/TaskScene";
 
 class Game extends Phaser.Game {
   constructor() {
@@ -26,6 +27,7 @@ class Game extends Phaser.Game {
     // << ADD ALL SCENES HERE >>
     this.scene.add("MainScene", MainScene);
     this.scene.add("WaitingRoom", WaitingRoom);
+    this.scene.add("TaskScene", TaskScene);
     // Start the game with the mainscene
     // << START GAME WITH MAIN SCENE HERE >>
     this.scene.start("MainScene");
